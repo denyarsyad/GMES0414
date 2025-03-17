@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7D56D4A9-2CC7-4AAD-822A-6E35EFC4960F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CSI.MES.P</RootNamespace>
+    <AssemblyName>CSI.MES.P.GMES0414</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.Charts.v15.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.CodeParser.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.Data.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.Office.v15.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.Pdf.v15.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v15.2.Drawing, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.Pdf.v15.2.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.PivotGrid.v15.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.Printing.v15.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.RichEdit.v15.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.Sparkline.v15.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.Utils.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v15.2.UI, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.Utils.v15.2.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.XtraBars.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.XtraCharts.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v15.2.UI, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.XtraCharts.v15.2.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v15.2.Wizard, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.XtraCharts.v15.2.Wizard.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.XtraEditors.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.XtraGrid.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.XtraLayout.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.XtraNavBar.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.XtraPivotGrid.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.XtraPrinting.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.XtraReports.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.XtraRichEdit.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.XtraTreeList.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevExpress.XtraVerticalGrid.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="JPlatform.Client.BrowserControls6, Version=6.1.0.0, Culture=neutral, PublicKeyToken=ac0e6bd56cb799f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\JPlatform.Client.BrowserControls6.dll</HintPath>
+    </Reference>
+    <Reference Include="JPlatform.Client.ChildForm6, Version=6.1.0.0, Culture=neutral, PublicKeyToken=ac0e6bd56cb799f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\JPlatform.Client.ChildForm6.dll</HintPath>
+    </Reference>
+    <Reference Include="JPlatform.Client.Controls6, Version=6.1.0.0, Culture=neutral, PublicKeyToken=ac0e6bd56cb799f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\JPlatform.Client.Controls6.dll</HintPath>
+    </Reference>
+    <Reference Include="JPlatform.Client.CSIGMESBaseform6, Version=6.1.7293.21235, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\JPlatform.Client.CSIGMESBaseform6.dll</HintPath>
+    </Reference>
+    <Reference Include="JPlatform.Client.JBaseForm6, Version=6.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\JPlatform.Client.JBaseForm6.dll</HintPath>
+    </Reference>
+    <Reference Include="JPlatform.Client.JERPBaseForm6, Version=5.1.6835.32644, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\JPlatform.Client.JERPBaseForm6.dll</HintPath>
+    </Reference>
+    <Reference Include="JPlatform.Client.JPopupBaseForm6, Version=5.1.6318.28534, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\JPlatform.Client.JPopupBaseForm6.dll</HintPath>
+    </Reference>
+    <Reference Include="JPlatform.Client.Library6, Version=6.1.0.0, Culture=neutral, PublicKeyToken=ac0e6bd56cb799f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\JPlatform.Client.Library6.dll</HintPath>
+    </Reference>
+    <Reference Include="JPlatform.Client.Login6, Version=6.1.0.0, Culture=neutral, PublicKeyToken=ac0e6bd56cb799f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\JPlatform.Client.Login6.dll</HintPath>
+    </Reference>
+    <Reference Include="JPlatform.Client.LoginForm6, Version=6.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\JPlatform.Client.LoginForm6.dll</HintPath>
+    </Reference>
+    <Reference Include="JPlatform.Client.LoginForm6_Base, Version=6.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\JPlatform.Client.LoginForm6_Base.dll</HintPath>
+    </Reference>
+    <Reference Include="JPlatform.Client.Messenger6, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\JPlatform.Client.Messenger6.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.3.1.20345, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDriver.Designer.cs">
+      <DependentUpon>AddDriver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCar.Designer.cs">
+      <DependentUpon>AddCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\SP_GMES0414.cs" />
+    <Compile Include="GMES0414.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GMES0414.Designer.cs">
+      <DependentUpon>GMES0414.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rptSIOK.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptSIOK.Designer.cs">
+      <DependentUpon>rptSIOK.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddDriver.resx">
+      <DependentUpon>AddDriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCar.resx">
+      <DependentUpon>AddCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GMES0414.resx">
+      <DependentUpon>GMES0414.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="rptSIOK.resx">
+      <DependentUpon>rptSIOK.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dll\DevExpress.Charts.v15.2.Core.dll" />
+    <Content Include="dll\DevExpress.CodeParser.v15.2.dll" />
+    <Content Include="dll\DevExpress.Data.v15.2.dll" />
+    <Content Include="dll\DevExpress.Data.v15.2.xml" />
+    <Content Include="dll\DevExpress.Office.v15.2.Core.dll" />
+    <Content Include="dll\DevExpress.Office.v15.2.Core.xml" />
+    <Content Include="dll\DevExpress.Pdf.v15.2.Core.dll" />
+    <Content Include="dll\DevExpress.Pdf.v15.2.Core.xml" />
+    <Content Include="dll\DevExpress.Pdf.v15.2.Drawing.dll" />
+    <Content Include="dll\DevExpress.Pdf.v15.2.Drawing.xml" />
+    <Content Include="dll\DevExpress.PivotGrid.v15.2.Core.dll" />
+    <Content Include="dll\DevExpress.Printing.v15.2.Core.dll" />
+    <Content Include="dll\DevExpress.Printing.v15.2.Core.xml" />
+    <Content Include="dll\DevExpress.RichEdit.v15.2.Core.dll" />
+    <Content Include="dll\DevExpress.RichEdit.v15.2.Core.xml" />
+    <Content Include="dll\DevExpress.Sparkline.v15.2.Core.dll" />
+    <Content Include="dll\DevExpress.Sparkline.v15.2.Core.xml" />
+    <Content Include="dll\DevExpress.Utils.v15.2.dll" />
+    <Content Include="dll\DevExpress.Utils.v15.2.UI.dll" />
+    <Content Include="dll\DevExpress.Utils.v15.2.UI.xml" />
+    <Content Include="dll\DevExpress.Utils.v15.2.xml" />
+    <Content Include="dll\DevExpress.XtraBars.v15.2.dll" />
+    <Content Include="dll\DevExpress.XtraCharts.v15.2.dll" />
+    <Content Include="dll\DevExpress.XtraCharts.v15.2.UI.dll" />
+    <Content Include="dll\DevExpress.XtraCharts.v15.2.Wizard.dll" />
+    <Content Include="dll\DevExpress.XtraEditors.v15.2.dll" />
+    <Content Include="dll\DevExpress.XtraEditors.v15.2.xml" />
+    <Content Include="dll\DevExpress.XtraGrid.v15.2.dll" />
+    <Content Include="dll\DevExpress.XtraGrid.v15.2.xml" />
+    <Content Include="dll\DevExpress.XtraLayout.v15.2.dll" />
+    <Content Include="dll\DevExpress.XtraLayout.v15.2.xml" />
+    <Content Include="dll\DevExpress.XtraNavBar.v15.2.dll" />
+    <Content Include="dll\DevExpress.XtraPivotGrid.v15.2.dll" />
+    <Content Include="dll\DevExpress.XtraPrinting.v15.2.dll" />
+    <Content Include="dll\DevExpress.XtraPrinting.v15.2.xml" />
+    <Content Include="dll\DevExpress.XtraReports.v15.2.dll" />
+    <Content Include="dll\DevExpress.XtraReports.v15.2.xml" />
+    <Content Include="dll\DevExpress.XtraRichEdit.v15.2.dll" />
+    <Content Include="dll\DevExpress.XtraRichEdit.v15.2.xml" />
+    <Content Include="dll\DevExpress.XtraTreeList.v15.2.dll" />
+    <Content Include="dll\DevExpress.XtraVerticalGrid.v15.2.dll" />
+    <Content Include="dll\JPlatform.Client.BrowserControls6.dll" />
+    <Content Include="dll\JPlatform.Client.ChildForm6.dll" />
+    <Content Include="dll\JPlatform.Client.Controls6.dll" />
+    <Content Include="dll\JPlatform.Client.CSIGMESBaseform6.dll" />
+    <Content Include="dll\JPlatform.Client.JBaseForm6.dll" />
+    <Content Include="dll\JPlatform.Client.JERPBaseForm6.dll" />
+    <Content Include="dll\JPlatform.Client.JPopupBaseForm6.dll" />
+    <Content Include="dll\JPlatform.Client.Library6.dll" />
+    <Content Include="dll\JPlatform.Client.Login6.dll" />
+    <Content Include="dll\JPlatform.Client.LoginForm6.dll" />
+    <Content Include="dll\JPlatform.Client.LoginForm6_Base.dll" />
+    <Content Include="dll\JPlatform.Client.Messenger6.dll" />
+    <Content Include="dll\Oracle.ManagedDataAccess.dll" />
+    <Content Include="dll\WeifenLuo.WinFormsUI.Docking.dll" />
+    <Content Include="Resources\addCar.png" />
+    <Content Include="Resources\addCarPress.png" />
+    <Content Include="Resources\addDriver.png" />
+    <Content Include="Resources\addDriverPress.png" />
+    <Content Include="Resources\approved.png" />
+    <Content Include="Resources\approvedClick.png" />
+    <Content Include="Resources\approvedHover.png" />
+    <Content Include="Resources\cancelled.png" />
+    <Content Include="Resources\cancelledClick.png" />
+    <Content Include="Resources\cancelledHover.png" />
+    <Content Include="Resources\ceklis.jpg" />
+    <Content Include="Resources\ceklisHover.png" />
+    <Content Include="Resources\ceklisKlik.png" />
+    <None Include="Resources\close.png" />
+    <Content Include="Resources\Finish.png" />
+    <Content Include="Resources\FinishKlik.png" />
+    <Content Include="Resources\Minus.png" />
+    <Content Include="Resources\MinusPress.png" />
+    <Content Include="Resources\ms-excel-press.png" />
+    <Content Include="Resources\ms-excel.png" />
+    <Content Include="Resources\Plus.png" />
+    <Content Include="Resources\PlusPress.png" />
+    <Content Include="Resources\simpan.png" />
+    <Content Include="Resources\simpanKlik.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
