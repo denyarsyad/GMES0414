@@ -34,6 +34,9 @@ using System.Drawing.Drawing2D;
 using System.Net.Mail;
 using System.Globalization;
 using DevExpress.XtraReports.UI;
+using System.Drawing.Imaging;
+using System.Net;
+
 
 namespace CSI.MES.P
 {
@@ -42,6 +45,9 @@ namespace CSI.MES.P
         public GMES0414()
         {
             InitializeComponent();
+
+            tooltip.InitialDelay = 100;
+            tooltip.ReshowDelay = 50; 
         }
 
         DataTable dtItem = new DataTable();
@@ -108,13 +114,13 @@ namespace CSI.MES.P
             pctGreen.BackColor = ColorTranslator.FromHtml("#EAFFDE");
             pctGreen.Image = new Bitmap(1, 1);
 
-            lblRed.Font = new Font("Calibri", 10, FontStyle.Regular);
-            lblRed.Text = "Cancelled"; 
-            lblYellow.Font = new Font("Calibri", 10, FontStyle.Regular);
+            lblRed.Font = new Font("Calibri", 8, FontStyle.Regular);
+            lblRed.Text = "Cancelled";
+            lblYellow.Font = new Font("Calibri", 8, FontStyle.Regular);
             lblYellow.Text = "Registered/Belum Input GA";
-            lblGrey.Font = new Font("Calibri", 10, FontStyle.Regular);
+            lblGrey.Font = new Font("Calibri", 8, FontStyle.Regular);
             lblGrey.Text = "Waktu Keberangkatan Sudah Kadaluwarsa";
-            lblGreen.Font = new Font("Calibri", 10, FontStyle.Regular);
+            lblGreen.Font = new Font("Calibri", 8, FontStyle.Regular);
             lblGreen.Text = "Finished/GA Sudah Input";
             #endregion
 
@@ -726,9 +732,10 @@ namespace CSI.MES.P
                 gvwMain.ColumnPanelRowHeight = 40;
                 gvwMain.RowHeight = 30;
                 gvwMain.OptionsView.ShowFooter = true;
+                gvwMain.OptionsView.ColumnAutoWidth = false;
                 gvwMain.Appearance.FooterPanel.Font = new Font("Calibri", 12, FontStyle.Bold);
-                gvwMain.Columns["HOUR_DURATION"].Summary.Clear();
-                gvwMain.Columns["HOUR_DURATION"].Summary.Add(DevExpress.Data.SummaryItemType.Count, "HOUR_DURATION", "Total: {0:N0}");
+                gvwMain.Columns["RENT_ID"].Summary.Clear();
+                gvwMain.Columns["RENT_ID"].Summary.Add(DevExpress.Data.SummaryItemType.Count, "RENT_ID", "Total: {0:N0}");
 
                 for (int i = 0; i < gvwMain.Columns.Count; i++)
                 {
@@ -2045,6 +2052,17 @@ namespace CSI.MES.P
                     }
                 }
 
+                // Menentukan range data yang akan diberi border
+                int lastRow = gvwMain.RowCount + 1; // +1 karena ada header
+                int lastCol = gvwMain.Columns.Count;
+                Excel.Range usedRange = workSheet.Range[
+                    workSheet.Cells[1, 1], workSheet.Cells[lastRow, lastCol]
+                ];
+
+                // Menambahkan border ke semua sisi
+                usedRange.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                usedRange.Borders.Weight = Excel.XlBorderWeight.xlThin;
+
                 // Save the Excel file
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "Excel files (*.xlsx)|*.xlsx";
@@ -2535,6 +2553,382 @@ namespace CSI.MES.P
             catch (Exception ex)
             {
                 MessageBoxW("" + ex.Message);
+            }
+        }
+
+        private Image AdjustBrightness(Image image, float brightness)
+        {
+            Bitmap tempBitmap = new Bitmap(image.Width, image.Height);
+            try
+            {
+
+                using (Graphics g = Graphics.FromImage(tempBitmap))
+                {
+                    float[][] ptsArray = {
+                    new float[] { brightness, 0, 0, 0, 0 }, // Red
+                    new float[] { 0, brightness, 0, 0, 0 }, // Green
+                    new float[] { 0, 0, brightness, 0, 0 }, // Blue
+                    new float[] { 0, 0, 0, 1, 0 }, // Alpha
+                    new float[] { 0, 0, 0, 0, 1 } // W Offset
+                    };
+
+                    ColorMatrix clrMatrix = new ColorMatrix(ptsArray);
+                    ImageAttributes imgAttributes = new ImageAttributes();
+                    imgAttributes.SetColorMatrix(clrMatrix, ColorMatrixFlag.Default, ColorAdjustType.Bitmap);
+
+                    g.DrawImage(image, new Rectangle(0, 0, image.Width, image.Height),
+                                0, 0, image.Width, image.Height, GraphicsUnit.Pixel, imgAttributes);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBoxW("AdjustBrightness " + ex.Message);
+            }
+
+            return tempBitmap;
+        }
+
+        ToolTip tooltip = new ToolTip();
+
+        private void btnSentMail_MouseHover(object sender, EventArgs e)
+        {
+            try
+            {
+                tooltip.SetToolTip(btnSentMail, "Sent Mail");
+                btnSentMail.Image = AdjustBrightness(Properties.Resources.mail, 0.5f);
+            }
+            catch (Exception ex)
+            {
+                MessageBoxW("btnSentMail_MouseHover " + ex.Message);
+            }
+        }
+
+        private void btnSentMail_MouseLeave(object sender, EventArgs e)
+        {
+            try
+            {
+                //tooltip.SetToolTip(btnSentMail, "");
+                btnSentMail.Image = AdjustBrightness(Properties.Resources.mail, 1f);
+            }
+            catch (Exception ex)
+            {
+                MessageBoxW("btnSentMail_MouseLeave " + ex.Message);
+            }
+        }
+
+        private void btnExportExcel_MouseHover(object sender, EventArgs e)
+        {
+            try
+            {
+                tooltip.SetToolTip(btnExportExcel, "Export to Excel");
+                btnExportExcel.Image = AdjustBrightness(Properties.Resources.ms_excel, 0.5f);
+            }
+            catch (Exception ex)
+            {
+                MessageBoxW("btnExportExcel_MouseHover " + ex.Message);
+            }
+        }
+
+        private void btnExportExcel_MouseLeave(object sender, EventArgs e)
+        {
+            try
+            {
+                //tooltip.SetToolTip(btnExportExcel, "");
+                btnExportExcel.Image = AdjustBrightness(Properties.Resources.ms_excel, 1f);
+            }
+            catch (Exception ex)
+            {
+                MessageBoxW("btnExportExcel_MouseLeave " + ex.Message);
+            }
+        }
+
+        private void btnAddDriver_MouseHover(object sender, EventArgs e)
+        {
+            try
+            {
+                tooltip.SetToolTip(btnAddDriver, "Add Driver");
+                btnAddDriver.Image = AdjustBrightness(Properties.Resources.addDriver, 0.5f);
+            }
+            catch (Exception ex)
+            {
+                MessageBoxW("btnAddDriver_MouseHover " + ex.Message);
+            }
+        }
+
+        private void btnAddDriver_MouseLeave(object sender, EventArgs e)
+        {
+            try
+            {
+                //tooltip.SetToolTip(btnAddDriver, "");
+                btnAddDriver.Image = AdjustBrightness(Properties.Resources.addDriver, 1f);
+            }
+            catch (Exception ex)
+            {
+                MessageBoxW("btnAddDriver_MouseLeave " + ex.Message);
+            }
+        }
+
+        private void btnAddCar_MouseHover(object sender, EventArgs e)
+        {
+            try
+            {
+                tooltip.SetToolTip(btnAddCar, "Add Car");
+                btnAddCar.Image = AdjustBrightness(Properties.Resources.addCar, 0.5f);
+            }
+            catch (Exception ex)
+            {
+                MessageBoxW("btnAddCar_MouseHover " + ex.Message);
+            }
+        }
+
+        private void btnAddCar_MouseLeave(object sender, EventArgs e)
+        {
+            try
+            {
+                //tooltip.SetToolTip(btnAddCar, "");
+                btnAddCar.Image = AdjustBrightness(Properties.Resources.addCar, 1f);
+            }
+            catch (Exception ex)
+            {
+                MessageBoxW("btnAddCar_MouseLeave " + ex.Message);
+            }
+        }
+
+        private void btnSentMail_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.SetYesNoMessageBox("Are you sure?", "Sent Mail", IconType.Warning) == DialogResult.Yes)
+                {
+                    pbProgressShow();
+                    // Generate Excel file
+                    string excelFilePath = GenerateExcelFile();
+                    if (string.IsNullOrEmpty(excelFilePath))
+                    {
+                        MessageBoxW("No data available to send.");
+                        return;
+                    }
+
+                    SP_GMES0414 cProc = new SP_GMES0414();
+                    DataTable dtData = null;
+
+                    dtData = cProc.SetParamData(dtData, "GET_MAIL", "");
+                    ResultSet rs = CommonCallQuery(dtData, cProc.ProcName, cProc.GetParamInfo(), false, 90000, "", true);
+
+                    if (rs != null && rs.ResultDataSet.Tables.Count > 0)
+                    {
+                        dtData = rs.ResultDataSet.Tables[0];
+                        if (dtData.Rows.Count > 0)
+                        {
+
+                            MailMessage mail = new MailMessage();
+                            mail.From = new MailAddress("gmes.automail@changshininc.com", "GMES.AUTOMAIL", System.Text.Encoding.UTF8);
+                            //mail.To.Add("it.lukman@changshininc.com");
+                            //mail.Bcc.Add("it.deny@changshininc.com");
+                            for (int i = 0; i < dtData.Rows.Count; i++)
+                            {
+                                if (dtData.Rows[i]["TYPE"].ToString() == "TO")
+                                {
+                                    mail.To.Add(dtData.Rows[i]["EMAIL"].ToString());
+                                }
+                                else if (dtData.Rows[i]["TYPE"].ToString() == "CC")
+                                {
+                                    mail.CC.Add(dtData.Rows[i]["EMAIL"].ToString());
+                                }
+                                else if (dtData.Rows[i]["TYPE"].ToString() == "BCC")
+                                {
+                                    mail.Bcc.Add(dtData.Rows[i]["EMAIL"].ToString());
+                                }
+                            }
+
+                            mail.Subject = "Official Car Request";
+                            mail.Body = GenerateHtml(fnGetDataGrouping("DATA_GROUPING", DateTime.Now.ToString("yyyyMMdd"), DateTime.Now.AddDays(1).ToString("yyyyMMdd")));
+                            mail.IsBodyHtml = true;
+                            mail.SubjectEncoding = System.Text.Encoding.UTF8;
+                            mail.BodyEncoding = System.Text.Encoding.UTF8;
+
+                            // Attach Excel file
+                            Attachment attachment;
+                            using (FileStream stream = new FileStream(excelFilePath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                            {
+                                attachment = new Attachment(stream, Path.GetFileName(excelFilePath));
+                            }
+                            mail.Attachments.Add(new Attachment(excelFilePath));
+
+                            SmtpClient smtpServer = new SmtpClient("jjmail2.dskorea.com", 587);
+                            smtpServer.UseDefaultCredentials = false;
+                            smtpServer.DeliveryMethod = SmtpDeliveryMethod.Network;
+                            smtpServer.Credentials = new System.Net.NetworkCredential("gmes.automail@dskorea.com", "csg1122!@");
+                            smtpServer.EnableSsl = true;
+                            System.Net.ServicePointManager.ServerCertificateValidationCallback += (s, cert, chain, sslPolicyErrors) => true;
+                            smtpServer.Send(mail);
+
+                            // Hapus file setelah email dikirim untuk menghindari akumulasi file
+                            foreach (Attachment att in mail.Attachments)
+                            {
+                                att.Dispose(); // Lepaskan file dari email
+                            }
+                            if (File.Exists(excelFilePath))
+                            {
+                                File.Delete(excelFilePath);
+                            }
+                            MessageBoxW("Succeed");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxW("btnSentMail_Click " + ex.Message);
+            }
+            pbProgressHide();
+        }
+
+        static string GenerateHtml(DataTable dtData)
+        {
+            StringBuilder html = new StringBuilder();
+            
+            try
+            {
+                html.Append("<!DOCTYPE html>");
+                html.Append("<html lang=\"en\">");
+                html.Append("<head>");
+                html.Append("<meta charset=\"UTF-8\">");
+                html.Append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">");
+                html.Append("<title>Car Arrangement Summary</title>");
+                html.Append("<style>");
+                html.Append("body { font-family: Calibri, sans-serif; }");
+                html.Append("table { width: 100%; border-collapse: collapse; margin-top: 20px; }");
+                html.Append("th, td { border: 1px solid black; padding: 8px; text-align: center; }");
+                html.Append("th { background-color: #f2f2f2; }");
+                html.Append("</style>");
+                html.Append("</head>");
+                html.Append("<body>");
+                //html.Append("<h2>Car Arrangement Details</h2>");
+                html.Append("<p>Dear All,</p>");
+                html.Append("<p>Attached is the Car Arrangement data for scheduled trips.</p>");
+
+                // Tabel Jadwal Hari Ini
+                html.Append("<h3>Departure Schedule</h3>");
+                html.Append("<table>");
+                html.Append("<tr><th>NO</th><th>DEPARTURE DATE</th><th>TIME</th><th>NUMBER</th><th>TYPE</th><th>DRIVER</th><th>PHONE</th><th>DESTINATION</th><th>NAME OF EMP</th></tr>");
+                foreach (DataRow row in dtData.Rows)
+                {
+                    html.Append("<tr>");
+                    foreach (var item in row.ItemArray)
+                    {
+                        html.AppendFormat("<td>{0}</td>", item);
+                    }
+                    html.Append("</tr>");
+                }
+                html.Append("</table>");
+
+                //// Tabel Jadwal Selanjutnya
+                //html.Append("<h3>Schedule for Upcoming Dates (" + DateTime.Now.AddDays(1).ToString("dddd MMMM dd, yyyy") + ")</h3>");
+                //html.Append("<table>");
+                //html.Append("<tr><th>NO</th><th>NUMBER</th><th>TYPE</th><th>DRIVER</th><th>PHONE</th><th>TIME</th><th>DESTINATION</th><th>NAME OF EMP</th></tr>");
+                //foreach (DataRow row in dtNext.Rows)
+                //{
+                //    html.Append("<tr>");
+                //    foreach (var item in row.ItemArray)
+                //    {
+                //        html.AppendFormat("<td>{0}</td>", item);
+                //    }
+                //    html.Append("</tr>");
+                //}
+                //html.Append("</table>");
+
+                html.Append("<p>Please take note of this information. If you have any further questions, please contact the relevant party.</p>");
+                html.Append("<p>Thank you,</p>");
+                html.Append("<p><strong>GMES System</strong></p>");
+                html.Append("</body>");
+                html.Append("</html>");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("GenerateHtml " + ex.Message);
+            }
+
+            return html.ToString();
+        }
+
+        private DataTable fnGetDataGrouping(string paramType, string startDt, string endDt)
+        {
+            DataTable dtData = new DataTable();
+            dtData = null;
+            try
+            {
+                SP_GMES0414 cProc = new SP_GMES0414();
+                dtData = cProc.SetParamData(dtData, paramType, startDt, endDt);
+                ResultSet rs = CommonCallQuery(dtData, cProc.ProcName, cProc.GetParamInfo(), false, 90000, "", true);
+
+                if (rs != null && rs.ResultDataSet != null && rs.ResultDataSet.Tables.Count > 0)
+                {
+                    dtData = rs.ResultDataSet.Tables[0];
+                }
+                else
+                {
+                    dtData.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBoxW("fnGetDataGrouping " + ex.Message);
+            }
+
+            return dtData;
+        }
+
+        private string GenerateExcelFile()
+        {
+            try
+            {
+                DataTable dt = fnGetDataGrouping("DATA_GROUPING", DateTime.Now.ToString("yyyyMMdd"), DateTime.Now.AddDays(1).ToString("yyyyMMdd"));
+                if (dt == null || dt.Rows.Count == 0)
+                {
+                    return string.Empty;
+                }
+
+                string fileName = "CarArrangement_" + DateTime.Now.ToString("yyyyMMddhhmmss") + ".xlsx";
+                string filePath = Path.Combine(Path.GetTempPath(), fileName);
+
+                Excel.Application excelApp = new Excel.Application();
+                Excel.Workbook workBook = excelApp.Workbooks.Add();
+                Excel.Worksheet workSheet = (Excel.Worksheet)workBook.Sheets[1];
+
+                // Insert column headers
+                for (int col = 0; col < dt.Columns.Count; col++)
+                {
+                    workSheet.Cells[1, col + 1] = dt.Columns[col].ColumnName;
+
+                    ((Excel.Range)workSheet.Columns[col + 1]).NumberFormat = "@";
+                }
+
+                // Insert data rows
+                for (int row = 0; row < dt.Rows.Count; row++)
+                {
+                    for (int col = 0; col < dt.Columns.Count; col++)
+                    {
+                        workSheet.Cells[row + 2, col + 1] = dt.Rows[row][col].ToString();
+                    }
+                }
+
+                // Apply border styles
+                Excel.Range range = workSheet.Range[workSheet.Cells[1, 1], workSheet.Cells[dt.Rows.Count + 1, dt.Columns.Count]];
+                range.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+
+                // Save the file
+                workBook.SaveAs(filePath);
+                workBook.Close();
+                excelApp.Quit();
+
+                return filePath;
+            }
+            catch (Exception ex)
+            {
+                MessageBoxW("GenerateExcelFile Error: " + ex.Message);
+                return string.Empty;
             }
         }
     }

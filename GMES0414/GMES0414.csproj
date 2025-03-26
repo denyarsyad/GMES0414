@@ -345,6 +345,7 @@
     <None Include="Resources\close.png" />
     <Content Include="Resources\Finish.png" />
     <Content Include="Resources\FinishKlik.png" />
+    <Content Include="Resources\mail.png" />
     <Content Include="Resources\Minus.png" />
     <Content Include="Resources\MinusPress.png" />
     <Content Include="Resources\ms-excel-press.png" />

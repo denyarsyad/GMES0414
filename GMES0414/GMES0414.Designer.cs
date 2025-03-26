@@ -30,6 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlHead = new DevExpress.XtraEditors.PanelControl();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAddCar = new DevExpress.XtraEditors.PictureEdit();
+            this.btnAddDriver = new DevExpress.XtraEditors.PictureEdit();
+            this.btnExportExcel = new DevExpress.XtraEditors.PictureEdit();
+            this.btnSentMail = new DevExpress.XtraEditors.PictureEdit();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblGreen = new DevExpress.XtraEditors.LabelControl();
             this.lblGrey = new DevExpress.XtraEditors.LabelControl();
@@ -39,10 +44,6 @@
             this.pctYellow = new DevExpress.XtraEditors.PictureEdit();
             this.pctGrey = new DevExpress.XtraEditors.PictureEdit();
             this.lblRed = new DevExpress.XtraEditors.LabelControl();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAddCar = new DevExpress.XtraEditors.PictureEdit();
-            this.btnAddDriver = new DevExpress.XtraEditors.PictureEdit();
-            this.btnExportExcel = new DevExpress.XtraEditors.PictureEdit();
             this.lblMinutes = new DevExpress.XtraEditors.LabelControl();
             this.txtInterval = new DevExpress.XtraEditors.TextEdit();
             this.chkAutoRf = new DevExpress.XtraEditors.CheckEdit();
@@ -109,15 +110,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.BaseTextEditEx.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlHead)).BeginInit();
             this.pnlHead.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddCar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddDriver.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExportExcel.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSentMail.Properties)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctGreen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctRed.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctYellow.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctGrey.Properties)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddCar.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddDriver.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExportExcel.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInterval.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkAutoRf.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboStatus.Properties)).BeginInit();
@@ -158,8 +160,8 @@
             // 
             // pnlHead
             // 
-            this.pnlHead.Controls.Add(this.tableLayoutPanel2);
             this.pnlHead.Controls.Add(this.tableLayoutPanel1);
+            this.pnlHead.Controls.Add(this.tableLayoutPanel2);
             this.pnlHead.Controls.Add(this.lblMinutes);
             this.pnlHead.Controls.Add(this.txtInterval);
             this.pnlHead.Controls.Add(this.chkAutoRf);
@@ -176,11 +178,111 @@
             this.pnlHead.Size = new System.Drawing.Size(1722, 75);
             this.pnlHead.TabIndex = 2;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
+            this.tableLayoutPanel1.ColumnCount = 7;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 1F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.25F));
+            this.tableLayoutPanel1.Controls.Add(this.btnAddCar, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnAddDriver, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnExportExcel, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnSentMail, 6, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(1172, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(156, 48);
+            this.tableLayoutPanel1.TabIndex = 11;
+            // 
+            // btnAddCar
+            // 
+            this.btnAddCar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddCar.EditValue = global::CSI.MES.P.Properties.Resources.addCar;
+            this.btnAddCar.Location = new System.Drawing.Point(3, 3);
+            this.btnAddCar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddCar.Name = "btnAddCar";
+            this.btnAddCar.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddCar.Properties.Appearance.Options.UseBackColor = true;
+            this.btnAddCar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.btnAddCar.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.btnAddCar.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.btnAddCar.Size = new System.Drawing.Size(32, 42);
+            this.btnAddCar.TabIndex = 10;
+            this.btnAddCar.Click += new System.EventHandler(this.btnAddCar_Click);
+            this.btnAddCar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnAddCar_MouseDown);
+            this.btnAddCar.MouseLeave += new System.EventHandler(this.btnAddCar_MouseLeave);
+            this.btnAddCar.MouseHover += new System.EventHandler(this.btnAddCar_MouseHover);
+            this.btnAddCar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnAddCar_MouseUp);
+            // 
+            // btnAddDriver
+            // 
+            this.btnAddDriver.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddDriver.EditValue = global::CSI.MES.P.Properties.Resources.addDriver;
+            this.btnAddDriver.Location = new System.Drawing.Point(42, 3);
+            this.btnAddDriver.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddDriver.Name = "btnAddDriver";
+            this.btnAddDriver.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddDriver.Properties.Appearance.Options.UseBackColor = true;
+            this.btnAddDriver.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.btnAddDriver.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.btnAddDriver.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.btnAddDriver.Size = new System.Drawing.Size(32, 42);
+            this.btnAddDriver.TabIndex = 9;
+            this.btnAddDriver.Click += new System.EventHandler(this.btnAddDriver_Click);
+            this.btnAddDriver.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnAddDriver_MouseDown);
+            this.btnAddDriver.MouseLeave += new System.EventHandler(this.btnAddDriver_MouseLeave);
+            this.btnAddDriver.MouseHover += new System.EventHandler(this.btnAddDriver_MouseHover);
+            this.btnAddDriver.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnAddDriver_MouseUp);
+            // 
+            // btnExportExcel
+            // 
+            this.btnExportExcel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnExportExcel.EditValue = global::CSI.MES.P.Properties.Resources.ms_excel;
+            this.btnExportExcel.Location = new System.Drawing.Point(81, 3);
+            this.btnExportExcel.Margin = new System.Windows.Forms.Padding(0);
+            this.btnExportExcel.Name = "btnExportExcel";
+            this.btnExportExcel.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.btnExportExcel.Properties.Appearance.Options.UseBackColor = true;
+            this.btnExportExcel.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.btnExportExcel.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.btnExportExcel.Size = new System.Drawing.Size(32, 42);
+            this.btnExportExcel.TabIndex = 11;
+            this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
+            this.btnExportExcel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnExportExcel_MouseDown);
+            this.btnExportExcel.MouseLeave += new System.EventHandler(this.btnExportExcel_MouseLeave);
+            this.btnExportExcel.MouseHover += new System.EventHandler(this.btnExportExcel_MouseHover);
+            this.btnExportExcel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnExportExcel_MouseUp);
+            // 
+            // btnSentMail
+            // 
+            this.btnSentMail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSentMail.EditValue = global::CSI.MES.P.Properties.Resources.mail;
+            this.btnSentMail.Location = new System.Drawing.Point(120, 3);
+            this.btnSentMail.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSentMail.Name = "btnSentMail";
+            this.btnSentMail.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.btnSentMail.Properties.Appearance.Options.UseBackColor = true;
+            this.btnSentMail.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.btnSentMail.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.btnSentMail.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.btnSentMail.Size = new System.Drawing.Size(33, 42);
+            this.btnSentMail.TabIndex = 12;
+            this.btnSentMail.Click += new System.EventHandler(this.btnSentMail_Click);
+            this.btnSentMail.MouseLeave += new System.EventHandler(this.btnSentMail_MouseLeave);
+            this.btnSentMail.MouseHover += new System.EventHandler(this.btnSentMail_MouseHover);
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.963099F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 90.0369F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.896552F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 93.10345F));
             this.tableLayoutPanel2.Controls.Add(this.lblGreen, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.lblGrey, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.lblYellow, 1, 1);
@@ -197,13 +299,13 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(277, 64);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(235, 64);
             this.tableLayoutPanel2.TabIndex = 12;
             // 
             // lblGreen
             // 
             this.lblGreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblGreen.Location = new System.Drawing.Point(32, 48);
+            this.lblGreen.Location = new System.Drawing.Point(21, 48);
             this.lblGreen.Name = "lblGreen";
             this.lblGreen.Size = new System.Drawing.Size(63, 13);
             this.lblGreen.TabIndex = 7;
@@ -212,7 +314,7 @@
             // lblGrey
             // 
             this.lblGrey.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblGrey.Location = new System.Drawing.Point(32, 34);
+            this.lblGrey.Location = new System.Drawing.Point(21, 34);
             this.lblGrey.Name = "lblGrey";
             this.lblGrey.Size = new System.Drawing.Size(63, 13);
             this.lblGrey.TabIndex = 6;
@@ -221,7 +323,7 @@
             // lblYellow
             // 
             this.lblYellow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblYellow.Location = new System.Drawing.Point(32, 20);
+            this.lblYellow.Location = new System.Drawing.Point(21, 20);
             this.lblYellow.Name = "lblYellow";
             this.lblYellow.Size = new System.Drawing.Size(63, 13);
             this.lblYellow.TabIndex = 5;
@@ -235,7 +337,7 @@
             this.pctGreen.Name = "pctGreen";
             this.pctGreen.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.pctGreen.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pctGreen.Size = new System.Drawing.Size(26, 16);
+            this.pctGreen.Size = new System.Drawing.Size(15, 16);
             this.pctGreen.TabIndex = 3;
             // 
             // pctRed
@@ -246,7 +348,7 @@
             this.pctRed.Name = "pctRed";
             this.pctRed.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.pctRed.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pctRed.Size = new System.Drawing.Size(26, 14);
+            this.pctRed.Size = new System.Drawing.Size(15, 14);
             this.pctRed.TabIndex = 0;
             // 
             // pctYellow
@@ -257,7 +359,7 @@
             this.pctYellow.Name = "pctYellow";
             this.pctYellow.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.pctYellow.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pctYellow.Size = new System.Drawing.Size(26, 14);
+            this.pctYellow.Size = new System.Drawing.Size(15, 14);
             this.pctYellow.TabIndex = 1;
             // 
             // pctGrey
@@ -268,90 +370,17 @@
             this.pctGrey.Name = "pctGrey";
             this.pctGrey.Properties.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.pctGrey.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pctGrey.Size = new System.Drawing.Size(26, 14);
+            this.pctGrey.Size = new System.Drawing.Size(15, 14);
             this.pctGrey.TabIndex = 2;
             // 
             // lblRed
             // 
             this.lblRed.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblRed.Location = new System.Drawing.Point(32, 6);
+            this.lblRed.Location = new System.Drawing.Point(21, 6);
             this.lblRed.Name = "lblRed";
             this.lblRed.Size = new System.Drawing.Size(63, 13);
             this.lblRed.TabIndex = 4;
             this.lblRed.Text = "labelControl1";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.44485F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.546576F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.44485F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.546576F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.44485F));
-            this.tableLayoutPanel1.Controls.Add(this.btnAddCar, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnAddDriver, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnExportExcel, 4, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1498, 2);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(222, 71);
-            this.tableLayoutPanel1.TabIndex = 11;
-            // 
-            // btnAddCar
-            // 
-            this.btnAddCar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddCar.EditValue = global::CSI.MES.P.Properties.Resources.addCar;
-            this.btnAddCar.Location = new System.Drawing.Point(0, 0);
-            this.btnAddCar.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAddCar.Name = "btnAddCar";
-            this.btnAddCar.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddCar.Properties.Appearance.Options.UseBackColor = true;
-            this.btnAddCar.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-            this.btnAddCar.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.btnAddCar.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.btnAddCar.Size = new System.Drawing.Size(68, 71);
-            this.btnAddCar.TabIndex = 10;
-            this.btnAddCar.Click += new System.EventHandler(this.btnAddCar_Click);
-            this.btnAddCar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnAddCar_MouseDown);
-            this.btnAddCar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnAddCar_MouseUp);
-            // 
-            // btnAddDriver
-            // 
-            this.btnAddDriver.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddDriver.EditValue = global::CSI.MES.P.Properties.Resources.addDriver;
-            this.btnAddDriver.Location = new System.Drawing.Point(76, 0);
-            this.btnAddDriver.Margin = new System.Windows.Forms.Padding(0);
-            this.btnAddDriver.Name = "btnAddDriver";
-            this.btnAddDriver.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddDriver.Properties.Appearance.Options.UseBackColor = true;
-            this.btnAddDriver.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-            this.btnAddDriver.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.btnAddDriver.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.btnAddDriver.Size = new System.Drawing.Size(68, 71);
-            this.btnAddDriver.TabIndex = 9;
-            this.btnAddDriver.Click += new System.EventHandler(this.btnAddDriver_Click);
-            this.btnAddDriver.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnAddDriver_MouseDown);
-            this.btnAddDriver.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnAddDriver_MouseUp);
-            // 
-            // btnExportExcel
-            // 
-            this.btnExportExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnExportExcel.EditValue = global::CSI.MES.P.Properties.Resources.ms_excel;
-            this.btnExportExcel.Location = new System.Drawing.Point(152, 0);
-            this.btnExportExcel.Margin = new System.Windows.Forms.Padding(0);
-            this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.btnExportExcel.Properties.Appearance.Options.UseBackColor = true;
-            this.btnExportExcel.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.btnExportExcel.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
-            this.btnExportExcel.Size = new System.Drawing.Size(70, 71);
-            this.btnExportExcel.TabIndex = 11;
-            this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
-            this.btnExportExcel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnExportExcel_MouseDown);
-            this.btnExportExcel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnExportExcel_MouseUp);
             // 
             // lblMinutes
             // 
@@ -1014,16 +1043,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pnlHead)).EndInit();
             this.pnlHead.ResumeLayout(false);
             this.pnlHead.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddCar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAddDriver.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExportExcel.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSentMail.Properties)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctGreen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctRed.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctYellow.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctGrey.Properties)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddCar.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAddDriver.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExportExcel.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtInterval.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkAutoRf.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboStatus.Properties)).EndInit();
@@ -1136,5 +1166,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn CAR_STOCK;
         private DevExpress.XtraGrid.Columns.GridColumn REMARK;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repCarStock;
+        private DevExpress.XtraEditors.PictureEdit btnSentMail;
     }
 }
