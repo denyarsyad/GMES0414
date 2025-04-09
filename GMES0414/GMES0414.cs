@@ -182,7 +182,7 @@ namespace CSI.MES.P
                                     {
                                         if (rentalNo != "" && driverId != "" && detailCar != "" && status != "C")
                                         {
-                                            if (status == "R")
+                                            if (status == "R" || status == "W")
                                             {
                                                 fnUpdate(rentalNo, driverId, detailCar, seq);
                                             }
@@ -2701,7 +2701,7 @@ namespace CSI.MES.P
             {
                 if (this.SetYesNoMessageBox("Are you sure?", "Sent Mail", IconType.Warning) == DialogResult.Yes)
                 {
-                    pbProgressShow();
+                    //pbProgressShow();
                     // Generate Excel file
                     string excelFilePath = GenerateExcelFile();
                     if (string.IsNullOrEmpty(excelFilePath))
@@ -2782,7 +2782,11 @@ namespace CSI.MES.P
             {
                 MessageBoxW("btnSentMail_Click " + ex.Message);
             }
-            pbProgressHide();
+            finally
+            {
+                //pbProgressHide();
+            }
+            
         }
 
         static string GenerateHtml(DataTable dtData)
