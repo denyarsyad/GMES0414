@@ -102,7 +102,7 @@ namespace CSI.MES.P
             for (int i = 0; i < gvwMain.Columns.Count; i++)
             {
                 gvwMain.Columns[i].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-                gvwMain.Columns[i].AppearanceHeader.Font = new Font("Calibri", 12, FontStyle.Bold);
+                gvwMain.Columns[i].AppearanceHeader.Font = new Font("Calibri", 12, FontStyle.Regular);
             }
 
             pctRed.BackColor = ColorTranslator.FromHtml("#F47174");
@@ -740,7 +740,7 @@ namespace CSI.MES.P
                 for (int i = 0; i < gvwMain.Columns.Count; i++)
                 {
                     gvwMain.Columns[i].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-                    gvwMain.Columns[i].AppearanceHeader.Font = new Font("Calibri", 12, FontStyle.Bold);
+                    gvwMain.Columns[i].AppearanceHeader.Font = new Font("Calibri", 12, FontStyle.Regular);
                     gvwMain.Columns[i].OptionsColumn.AllowEdit = false;
                     gvwMain.Columns[i].AppearanceCell.Font = new Font("Calibri", 12, FontStyle.Regular);
                     gvwMain.Columns[i].Width = gvwMain.Columns[i].GetBestWidth();
@@ -776,7 +776,7 @@ namespace CSI.MES.P
                 for (int i = 0; i < gvwCarStock.Columns.Count; i++)
                 {
                     gvwCarStock.Columns[i].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-                    gvwCarStock.Columns[i].AppearanceHeader.Font = new Font("Calibri", 12, FontStyle.Bold);
+                    gvwCarStock.Columns[i].AppearanceHeader.Font = new Font("Calibri", 12, FontStyle.Regular);
                     gvwCarStock.Columns[i].OptionsColumn.AllowEdit = false;
                     gvwCarStock.Columns[i].AppearanceCell.Font = new Font("Calibri", 12, FontStyle.Regular);
                     gvwCarStock.Columns[i].Width = gvwMain.Columns[i].GetBestWidth();
@@ -810,7 +810,7 @@ namespace CSI.MES.P
                 for (int i = 0; i < gvwCancel.Columns.Count; i++)
                 {
                     gvwCancel.Columns[i].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-                    gvwCancel.Columns[i].AppearanceHeader.Font = new Font("Calibri", 12, FontStyle.Bold);
+                    gvwCancel.Columns[i].AppearanceHeader.Font = new Font("Calibri", 12, FontStyle.Regular);
                     gvwCancel.Columns[i].OptionsColumn.AllowEdit = false;
                     gvwCancel.Columns[i].AppearanceCell.Font = new Font("Calibri", 12, FontStyle.Regular);
                     //gvwCancel.Columns[i].Width = gvwMain.Columns[i].GetBestWidth();

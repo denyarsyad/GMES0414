@@ -530,7 +530,7 @@
             // 
             // RENT_ID
             // 
-            this.RENT_ID.Caption = "REG ID";
+            this.RENT_ID.Caption = "Reg ID";
             this.RENT_ID.FieldName = "RENT_ID";
             this.RENT_ID.Name = "RENT_ID";
             this.RENT_ID.Visible = true;
@@ -538,7 +538,7 @@
             // 
             // RENT_DATE
             // 
-            this.RENT_DATE.Caption = "DATE";
+            this.RENT_DATE.Caption = "Date";
             this.RENT_DATE.FieldName = "RENT_DATE";
             this.RENT_DATE.Name = "RENT_DATE";
             this.RENT_DATE.Visible = true;
@@ -546,7 +546,7 @@
             // 
             // RENT_TIME
             // 
-            this.RENT_TIME.Caption = "TIME";
+            this.RENT_TIME.Caption = "Time";
             this.RENT_TIME.FieldName = "RENT_TIME";
             this.RENT_TIME.Name = "RENT_TIME";
             this.RENT_TIME.Visible = true;
@@ -554,7 +554,7 @@
             // 
             // USER_ID
             // 
-            this.USER_ID.Caption = "USER NAME";
+            this.USER_ID.Caption = "User Name";
             this.USER_ID.FieldName = "USER_ID";
             this.USER_ID.Name = "USER_ID";
             this.USER_ID.Visible = true;
@@ -562,7 +562,7 @@
             // 
             // DEPT_NAME
             // 
-            this.DEPT_NAME.Caption = "DEPT";
+            this.DEPT_NAME.Caption = "Dept";
             this.DEPT_NAME.FieldName = "DEPT_NAME";
             this.DEPT_NAME.Name = "DEPT_NAME";
             this.DEPT_NAME.Visible = true;
@@ -570,7 +570,7 @@
             // 
             // DRIVER_ID
             // 
-            this.DRIVER_ID.Caption = "DRIVER";
+            this.DRIVER_ID.Caption = "Driver";
             this.DRIVER_ID.ColumnEdit = this.repDriver;
             this.DRIVER_ID.FieldName = "DRIVER_ID";
             this.DRIVER_ID.Name = "DRIVER_ID";
@@ -595,7 +595,7 @@
             // 
             // CONTACT
             // 
-            this.CONTACT.Caption = "CONTACT";
+            this.CONTACT.Caption = "Contact";
             this.CONTACT.FieldName = "CONTACT";
             this.CONTACT.Name = "CONTACT";
             this.CONTACT.Visible = true;
@@ -603,7 +603,7 @@
             // 
             // DETAIL_CAR
             // 
-            this.DETAIL_CAR.Caption = "CAR";
+            this.DETAIL_CAR.Caption = "Car";
             this.DETAIL_CAR.ColumnEdit = this.repCar;
             this.DETAIL_CAR.FieldName = "DETAIL_CAR";
             this.DETAIL_CAR.Name = "DETAIL_CAR";
@@ -627,7 +627,7 @@
             // 
             // SERIAL_NO
             // 
-            this.SERIAL_NO.Caption = "SERIAL NO";
+            this.SERIAL_NO.Caption = "Serial No";
             this.SERIAL_NO.FieldName = "SERIAL_NO";
             this.SERIAL_NO.Name = "SERIAL_NO";
             this.SERIAL_NO.Visible = true;
@@ -635,7 +635,7 @@
             // 
             // COLOR
             // 
-            this.COLOR.Caption = "COLOR";
+            this.COLOR.Caption = "Color";
             this.COLOR.FieldName = "COLOR";
             this.COLOR.Name = "COLOR";
             this.COLOR.Visible = true;
@@ -643,7 +643,7 @@
             // 
             // SEQ
             // 
-            this.SEQ.Caption = "SEQ";
+            this.SEQ.Caption = "Seq";
             this.SEQ.ColumnEdit = this.repSeq;
             this.SEQ.FieldName = "SEQ";
             this.SEQ.Name = "SEQ";
@@ -660,7 +660,7 @@
             // 
             // DESTINATION
             // 
-            this.DESTINATION.Caption = "DESTINATION";
+            this.DESTINATION.Caption = "Destination";
             this.DESTINATION.FieldName = "DESTINATION";
             this.DESTINATION.Name = "DESTINATION";
             this.DESTINATION.Visible = true;
@@ -668,7 +668,7 @@
             // 
             // PASSENGER
             // 
-            this.PASSENGER.Caption = "PASSENGERS";
+            this.PASSENGER.Caption = "Passengers";
             this.PASSENGER.FieldName = "PASSENGER";
             this.PASSENGER.Name = "PASSENGER";
             this.PASSENGER.Visible = true;
@@ -676,7 +676,7 @@
             // 
             // PURPOSES
             // 
-            this.PURPOSES.Caption = "PURPOSE";
+            this.PURPOSES.Caption = "Purpose";
             this.PURPOSES.FieldName = "PURPOSES";
             this.PURPOSES.Name = "PURPOSES";
             this.PURPOSES.Visible = true;
@@ -684,7 +684,7 @@
             // 
             // START_DATE
             // 
-            this.START_DATE.Caption = "START DATE";
+            this.START_DATE.Caption = "Start Date";
             this.START_DATE.FieldName = "START_DATE";
             this.START_DATE.Name = "START_DATE";
             this.START_DATE.Visible = true;
@@ -692,7 +692,7 @@
             // 
             // END_DATE
             // 
-            this.END_DATE.Caption = "END DATE";
+            this.END_DATE.Caption = "End Date";
             this.END_DATE.FieldName = "END_DATE";
             this.END_DATE.Name = "END_DATE";
             this.END_DATE.Visible = true;
@@ -700,7 +700,7 @@
             // 
             // HOUR_DURATION
             // 
-            this.HOUR_DURATION.Caption = "DURATION (H)";
+            this.HOUR_DURATION.Caption = "Duration (H)";
             this.HOUR_DURATION.FieldName = "HOUR_DURATION";
             this.HOUR_DURATION.Name = "HOUR_DURATION";
             this.HOUR_DURATION.Visible = true;
@@ -708,7 +708,7 @@
             // 
             // STATUS
             // 
-            this.STATUS.Caption = "STATUS";
+            this.STATUS.Caption = "Status";
             this.STATUS.FieldName = "STATUS";
             this.STATUS.Name = "STATUS";
             this.STATUS.Visible = true;
@@ -763,7 +763,7 @@
             // 
             // REG_ID
             // 
-            this.REG_ID.Caption = "REG ID";
+            this.REG_ID.Caption = "Reg ID";
             this.REG_ID.FieldName = "REG_ID";
             this.REG_ID.Name = "REG_ID";
             this.REG_ID.Visible = true;
@@ -771,7 +771,7 @@
             // 
             // USER_NAME
             // 
-            this.USER_NAME.Caption = "USER NAME";
+            this.USER_NAME.Caption = "User Name";
             this.USER_NAME.FieldName = "USER_NAME";
             this.USER_NAME.Name = "USER_NAME";
             this.USER_NAME.Visible = true;
@@ -779,7 +779,7 @@
             // 
             // DEPT
             // 
-            this.DEPT.Caption = "DEPT";
+            this.DEPT.Caption = "Dept";
             this.DEPT.FieldName = "DEPT";
             this.DEPT.Name = "DEPT";
             this.DEPT.Visible = true;
@@ -787,7 +787,7 @@
             // 
             // DEST
             // 
-            this.DEST.Caption = "DESTINATION";
+            this.DEST.Caption = "Destination";
             this.DEST.FieldName = "DEST";
             this.DEST.Name = "DEST";
             this.DEST.Visible = true;
@@ -795,7 +795,7 @@
             // 
             // PASSENGERS
             // 
-            this.PASSENGERS.Caption = "PASSENGERS";
+            this.PASSENGERS.Caption = "Passengers";
             this.PASSENGERS.FieldName = "PASSENGERS";
             this.PASSENGERS.Name = "PASSENGERS";
             this.PASSENGERS.Visible = true;
@@ -803,7 +803,7 @@
             // 
             // STRT
             // 
-            this.STRT.Caption = "START";
+            this.STRT.Caption = "Start";
             this.STRT.FieldName = "STRT";
             this.STRT.Name = "STRT";
             this.STRT.Visible = true;
@@ -811,7 +811,7 @@
             // 
             // ENDT
             // 
-            this.ENDT.Caption = "END";
+            this.ENDT.Caption = "End";
             this.ENDT.FieldName = "ENDT";
             this.ENDT.Name = "ENDT";
             this.ENDT.Visible = true;
@@ -819,7 +819,7 @@
             // 
             // MEMO
             // 
-            this.MEMO.Caption = "MEMO";
+            this.MEMO.Caption = "Memo";
             this.MEMO.FieldName = "MEMO";
             this.MEMO.Name = "MEMO";
             this.MEMO.Visible = true;
@@ -938,7 +938,7 @@
             // 
             // CAL_DATE
             // 
-            this.CAL_DATE.Caption = "DATE";
+            this.CAL_DATE.Caption = "Date";
             this.CAL_DATE.FieldName = "CAL_DATE";
             this.CAL_DATE.Name = "CAL_DATE";
             this.CAL_DATE.Visible = true;
@@ -946,7 +946,7 @@
             // 
             // CAL_DAY
             // 
-            this.CAL_DAY.Caption = "DAY";
+            this.CAL_DAY.Caption = "Day";
             this.CAL_DAY.FieldName = "CAL_DAY";
             this.CAL_DAY.Name = "CAL_DAY";
             this.CAL_DAY.Visible = true;
@@ -954,7 +954,7 @@
             // 
             // HOLIDAY_YN
             // 
-            this.HOLIDAY_YN.Caption = "HOLIDAY YN";
+            this.HOLIDAY_YN.Caption = "Holiday YN";
             this.HOLIDAY_YN.FieldName = "HOLIDAY_YN";
             this.HOLIDAY_YN.Name = "HOLIDAY_YN";
             this.HOLIDAY_YN.Visible = true;
@@ -962,7 +962,7 @@
             // 
             // CAR_STOCK
             // 
-            this.CAR_STOCK.Caption = "CAR STOCK";
+            this.CAR_STOCK.Caption = "Car Stock";
             this.CAR_STOCK.ColumnEdit = this.repCarStock;
             this.CAR_STOCK.FieldName = "CAR_STOCK";
             this.CAR_STOCK.Name = "CAR_STOCK";
@@ -980,7 +980,7 @@
             // 
             // REMARK
             // 
-            this.REMARK.Caption = "REMARK";
+            this.REMARK.Caption = "Remark";
             this.REMARK.FieldName = "REMARK";
             this.REMARK.Name = "REMARK";
             this.REMARK.Visible = true;
