@@ -176,6 +176,7 @@ namespace CSI.MES.P
                                     string seq = row["SEQ"].ToString();
                                     string status = row["STATUS"].ToString();
                                     string startDate = row["START_DATE"].ToString();
+                                    string endDate = row["END_DATE"].ToString();
                                     DateTime departure = DateTime.ParseExact(startDate, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture);
 
                                     if (departure >= DateTime.Now)
@@ -184,7 +185,7 @@ namespace CSI.MES.P
                                         {
                                             if (status == "R" || status == "W")
                                             {
-                                                fnUpdate(rentalNo, driverId, detailCar, seq);
+                                                fnUpdate(rentalNo, driverId, detailCar, seq, startDate, endDate);
                                             }
                                             else
                                             {
@@ -505,7 +506,7 @@ namespace CSI.MES.P
             }
         }
 
-        private void fnUpdate(string RENT_ID, string DRIVER_ID, string DETAIL_CAR, string SEQ)
+        private void fnUpdate(string RENT_ID, string DRIVER_ID, string DETAIL_CAR, string SEQ, string START_DATE, string END_DATE)
         {
             try
             {
@@ -534,8 +535,8 @@ namespace CSI.MES.P
                                                   "",
                                                   "",
                                                   "",
-                                                  "",
-                                                  "",
+                                                  START_DATE, // START DATE
+                                                  END_DATE, //END DATE
                                                   "",
                                                   "",
                                                   "",
